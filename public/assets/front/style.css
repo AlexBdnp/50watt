@@ -1,0 +1,126 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.ttf');
+    
+    font-family: 'Roboto-Light';
+    src: url('../fonts/Roboto-Light.ttf');
+  }
+
+body {
+    font-family: 'Roboto-Light';
+    margin: 0;
+}
+
+h3 {
+    margin-bottom: 0em;
+}
+/* ------X-Small devices (portrait phones, less than 576px)------ */
+/* @media (max-width: 575px) { */
+    header {
+        width: 100%;
+        height: 120px;
+        background: #424242;
+        color: white;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    header > div {
+        flex: 1 25%;
+        height: 60px;
+    }
+
+    header .logo img {
+        width: 167px;
+        height: auto;
+    }
+
+    header nav {
+       flex: 1 340px; 
+    }
+    header ul.menu {
+        list-style-type: none;
+        padding-left: 0%;
+        margin-left: 0;
+        display: flex;
+        justify-content: center;
+
+    }
+    header ul.menu li {
+        flex: 1;
+        text-align: center;
+    }
+    header ul.menu a {
+        text-decoration: none;
+        color: white;
+    }
+    
+    header .phones {
+        margin: 10px;
+        text-align: right;
+    }
+    header .phones > img {
+        width: 30px;
+        height: 30px;
+        margin: 5px 6px;
+    }
+    header .phones > ul {
+        list-style-type: none;
+        padding-left: 0%;
+        margin-left: 0%;
+        margin: 0;
+
+        float: right;
+    }
+    header a {
+        text-decoration: none;
+        color: white;
+    }
+/* } */
+
+main .article-name {
+    background: center / cover url('../images/doroga.png');
+    display: flex;
+    align-items: center;
+    justify-content: space-around;  
+}
+main .article-name h1 {
+    color: white;
+}
+main .article-brands{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 10px;
+}
+main .article-brands img{
+    max-width: 170px;
+}
+main .article-image {
+    text-align: center;
+}
+main .article-image img {
+    width: 100%;
+    margin: 10px 0;
+}
+article ul {
+    margin-top: 5px;
+}
+
+/* ------X-Small devices (portrait phones, less than 576px)------ */
+@media (max-width: 575px) { 
+    main .article-name h1 {
+        font-size: 15pt;
+    }
+    main .article-brands img{
+        width: 50px;
+    }
+}
+/* Большие девайсы (десктопы, >= 992px) */
+@media (min-width: 992px) {
+    main .article-image img {
+        width: 50%;
+    }
+}
