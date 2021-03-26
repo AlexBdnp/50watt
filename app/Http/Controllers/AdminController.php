@@ -8,8 +8,7 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $data = Telephone::select('telnumber')->get();
-        // dd($data);
+        $data = Telephone::select('telnumber', 'created_at')->get();
         return view('admin.panel', ['phones' => $data]);
     }
 }

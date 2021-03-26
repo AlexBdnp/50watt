@@ -53,12 +53,4 @@
             </ul>
         </section>
     </article>
-    <div class="client-form">
-        <span>Оставьте Ваш номер и мы обязательно перезвоним</span>
-        <form action="/" method="post">
-            @csrf
-            <input type="tel" name="tel" id="tel" placeholder="Введите номер...">
-            <input type="submit" value="OK">
-        </form>
-    </div>
 @endsection

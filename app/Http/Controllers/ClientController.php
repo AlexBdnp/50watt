@@ -9,7 +9,6 @@ class ClientController extends Controller
 {
     public function someAction(Request $request)
     {
-        // return "$request->tel<br><a href='/'>На главную</a>";
         $telephone = new Telephone();
         $telephone->telnumber = $request->tel;
         $telephone->save();

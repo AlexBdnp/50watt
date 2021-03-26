@@ -17,7 +17,9 @@
             @foreach($phones as $phone)
                 <li>
                     <a href="tel:{{ $phone->telnumber }}">{{ $phone->telnumber }}</a>
-                    <input type="button" class="delete-number" value="-">
+                    <span> | </span>
+                    <span>{{ $phone->created_at->format('d M Y H:i') }}</span>
+                    <!-- <input type="button" class="delete-number" value="-"> -->
                 </li>
             @endforeach
         </ul>
