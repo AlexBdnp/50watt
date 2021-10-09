@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
-    public function someAction(Request $request)
+    public function storePhone(Request $request)
     {
         $telephone = new Telephone();
         $telephone->telnumber = $request->tel;

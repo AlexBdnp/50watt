@@ -2,14 +2,26 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\RegistrationController;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
     return view('front.tonirovka');
 })->name('index');
+Route::post('/', [ClientController::class, 'storePhone']);
 
-Route::post('/', [ClientController::class, 'someAction']);
+Route::get('/register', [RegistrationController::class, 'registrationCreate'])->name('register.create');
+Route::post('/register', [RegistrationController::class, 'registrationStore'])->name('register.store');
+
+Route::prefix('/admin')->group(function() {
+  Route::get('/', [AdminController::class, 'index'])->name('admin');
+  Route::get('/login', [AdminController::class, 'login'])->name('admin.login');
+  Route::post('/login', [AdminController::class, 'authenticate'])->name('admin.authenticate');
+});
+
+
 
 // ------------Тонировка----------------
 Route::get('/tonirovka', function () {
@@ -30,20 +42,22 @@ Route::get('/remont-stekla', function() {
     return view('front.remontstekla');
 });
 
-Route::get('/fox', function() { 
-    return 'Quick brown fox jumps over lazy dog';
-});
-
-Route::get('/admin', [AdminController::class, 'index']);
-
 // ------------Требуется тонировщик------------
 Route::get('/rabotnik-tonirovka', function() {
-    return view('front.rabota');
+  return view('front.rabota');
 });
 
 // ------------Требуется автоэлектрик------------
 Route::get('/rabotnik-avtoelectrik', function() {
-    return view('front.rabota2');
+  return view('front.rabota2');
+});
+
+Route::get('/fox', function() { 
+    return 'Quick brown fox jumps over lazy dog';
+});
+
+Route::get('/test-db', function() {
+  return DB::select('show tables');
 });
 
 Route::redirect('/avtozvuk/magnitoly/kenwood-kmm-bt-206', 'https://loudcar.com.ua/avtozvuk/magnitola/kenwood-kmm-bt206');

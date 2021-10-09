@@ -7,10 +7,15 @@
     <title>Клиенты СТО - Админка</title>
 </head>
 <body>
+    @if(session('success'))
+        <div class="alert alert-success" style="color: green;">
+            {{ session('success') }}
+        </div>
+    @endif
     <div>
         <h1>Клиенты</h1>
     </div>
-    <div><a href="/">На главную</a></div>
+    <div><a href="/">На главную</a> | <a href="route(admin.logout)"></a></div>
     <div>
         <ul>
             <!-- <li><input type="button" value="123" id="elem"><span id="resp"></span></li> -->
